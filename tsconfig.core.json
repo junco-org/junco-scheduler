@@ -1,0 +1,8 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "types": [],
+    "paths": { "dataflow-engine": ["../dataflow-engine/dist/index.d.ts"] }
+  },
+  "include": ["src/index.ts", "src/scheduler.ts", "src/parallel.ts", "src/round-robin.ts"]
+}

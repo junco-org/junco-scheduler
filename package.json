@@ -1,0 +1,71 @@
+{
+  "name": "junco-scheduler",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Importable dataflow-engine schedulers: a stateful builder, full-parallel and round-robin policies, and a Pi agent scheduler.",
+  "type": "module",
+  "packageManager": "bun@1.4.2",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "bun": "./src/index.ts",
+      "import": "./dist/index.js"
+    },
+    "./agent": {
+      "types": "./dist/agent.d.ts",
+      "bun": "./src/agent.ts",
+      "import": "./dist/agent.js"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "build:core": "tsc -p tsconfig.core.json",
+    "typecheck": "tsc -p tsconfig.typecheck.json",
+    "test": "bun test ./test/*.test.ts"
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-agent-core": "0.99.2",
+    "@earendil-works/pi-ai": "0.99.2",
+    "@earendil-works/pi-coding-agent": "0.99.2",
+    "dataflow-engine": "^0.1.0",
+    "junco-agent": "^0.1.0",
+    "typebox": "1.3.34"
+  },
+  "peerDependenciesMeta": {
+    "@earendil-works/pi-agent-core": {
+      "optional": true
+    },
+    "@earendil-works/pi-ai": {
+      "optional": true
+    },
+    "@earendil-works/pi-coding-agent": {
+      "optional": true
+    },
+    "dataflow-engine": {
+      "optional": true
+    },
+    "junco-agent": {
+      "optional": true
+    },
+    "typebox": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/bun": "1.4.2",
+    "@types/node": "26.6.3",
+    "dataflow-engine": "file:../dataflow-engine",
+    "typescript": "7.0.2"
+  },
+  "overrides": {
+    "@earendil-works/pi-agent-core": "0.99.2",
+    "junco-tools": "file:../junco-tools",
+    "typebox": "1.3.34"
+  }
+}

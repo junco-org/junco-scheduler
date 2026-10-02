@@ -1,0 +1,4 @@
+[install]
+# Sibling file: packages are snapshotted in this root's store. Build each upstream package
+# before installing here so its manifest, declarations and native artifacts are current.
+linker = "isolated"
